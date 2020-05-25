@@ -17,50 +17,65 @@ int main(void)
     while (change <= 0);
 
     changeInCents = round(change * 100);
-    // printf("change: %i\n", changeInCents);
+
     do
     {
         if (changeInCents >= quarter)
         {
             coins = coins + (changeInCents / quarter);
-            // printf("- coins: %i\n", coins);
+
             if (changeInCents % quarter != 0)
             {
                 changeInCents = changeInCents % quarter;
+            }
+            else
+            {
+                printf("%i\n", coins);
+                break;
             }
         }
         if (changeInCents >= dime)
         {
             coins = coins + (changeInCents / dime);
-            // printf("- coins: %i\n", coins);
             if (changeInCents % dime != 0)
             {
                 changeInCents = changeInCents % dime;
+            }
+            else
+            {
+                printf("%i\n", coins);
+                break;
             }
         }
         if (changeInCents >= nickel)
         {
             coins = coins + (changeInCents / nickel);
-            // printf("- coins: %i\n", coins);
-            if(changeInCents % nickel != 0)
+            if (changeInCents % nickel != 0)
             {
                 changeInCents = changeInCents % nickel;
+            }
+            else
+            {
+                printf("%i\n", coins);
+                break;
             }
         }
         if (changeInCents >= penny)
         {
             coins = coins + (changeInCents / penny);
-            // printf("- coins: %i\n", coins);
+
             if (changeInCents % penny != 0)
             {
                 changeInCents = changeInCents % penny;
             }
+            else
+            {
+                printf("%i\n", coins);
+                break;
+            }
         }
 
-        // printf("changeInCents: %i, coins: %i", changeInCents, coins);
-        printf("%i\n", coins);
-
     }
-    while (remain > 0);
+    while (true);
 
 }
